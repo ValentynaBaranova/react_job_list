@@ -1,0 +1,127 @@
+.JobPage {
+  background: #fff;
+}
+
+.page_container {
+  max-width: 1400px;
+  margin: 29px auto;
+  background-color: #fff;
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 720px auto;
+  color: #3a4562;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid #3a456213;
+  margin-bottom: 57px;
+}
+
+.page_name {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.action_links a {
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+  padding-left: 31px;
+}
+
+.apply_link {
+  background: #384564;
+  border-radius: 8px;
+  padding: 18px 30px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 400ms ease-in;
+}
+
+.apply_link:hover {
+  background: #b1c6f5;
+  color: #384564;
+}
+
+.content_title {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0 7px 0;
+}
+
+.title {
+  width: 501px;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.75px;
+}
+
+.salary_number {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.info_term {
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.info_block {
+  margin: 104px 0 87px 0;
+}
+
+.title_block {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  border-bottom: 1px solid #3a456213;
+  padding-bottom: 9px;
+  margin-bottom: 15px;
+}
+.choose_option_type {
+  display: flex;
+  margin-bottom: 23px;
+}
+
+.choose_option_type button {
+  background: rgba(161, 177, 219, 0.317343);
+  border: 1px solid rgba(85, 105, 158, 0.3);
+  border-radius: 8px;
+  padding: 17px 0 16px 0;
+  width: 222px;
+  margin-right: 8px;
+  color: #55699e;
+}
+
+.benefits button {
+  background: rgba(255, 207, 0, 0.15);
+  border: 1px solid #ffcf00;
+  border-radius: 8px;
+  padding: 17px 0 16px 0;
+  width: 222px;
+  margin-right: 8px;
+  color: #988b49;
+}
+
+.pictures_block {
+  margin: 87px 0 89px 0;
+}
+
+.back_link {
+  padding: 18px 26px 16px 52px;
+  background: rgba(161, 177, 219, 0.317343);
+  border: 1px solid rgba(85, 105, 158, 0.3);
+  border-radius: 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 400ms ease-in;
+  font-size: 12px;
+  line-height: 16px;
+}

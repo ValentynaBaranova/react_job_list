@@ -1,4 +1,13 @@
 .JobList {
+  background-color: #f5f5f5;
+  background-size: cover;
+  height: 200px;
+}
+
+.page_container_list {
+  max-width: 1400px;
+  margin: 29px auto;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -10,11 +19,17 @@
   border-radius: 8px;
 }
 
-.JobList h2 {
+.JobList h2 a {
   font-weight: 700;
   font-size: 20px;
   color: #3a4562;
   letter-spacing: -0.625px;
+  text-decoration: none;
+  transition: all 40ms ease-in-out;
+}
+
+.JobList h2 a:hover {
+  text-decoration: underline;
 }
 
 .JobList h3 {
@@ -30,7 +45,7 @@
   clip-path: circle(42px at 50% 50%);
 }
 
-.JobList .content {
+.JobList .content_list {
   width: 800px;
 }
 
