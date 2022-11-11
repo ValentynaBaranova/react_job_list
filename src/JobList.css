@@ -1,0 +1,47 @@
+.JobList {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 16px;
+  gap: 32px;
+  box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+.JobList h2 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #3a4562;
+  letter-spacing: -0.625px;
+}
+
+.JobList h3 {
+  font-weight: 400;
+  font-size: 16px;
+  color: #878d9d;
+  padding-top: 8px;
+}
+
+.JobList img {
+  width: 85px;
+  height: 85px;
+  clip-path: circle(42px at 50% 50%);
+}
+
+.JobList .content {
+  width: 800px;
+}
+
+.JobList .right_block {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  align-items: end;
+  justify-items: end;
+}
+
+.JobList .bookmark {
+  color: #70778b;
+  font-size: 16px;
+}
