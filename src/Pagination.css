@@ -1,0 +1,21 @@
+.Pagination {
+  margin: 50px auto;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Pagination li {
+  background-color: #fff;
+  color: black;
+  padding: 7px 20px;
+  display: inline;
+  margin-right: 10px;
+  border: 1px solid #000;
+}
+
+.Pagination button {
+  padding: 10px 20px;
+  margin-right: 10px;
+}

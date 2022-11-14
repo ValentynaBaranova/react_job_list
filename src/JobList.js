@@ -1,39 +1,50 @@
-import React from "react";
-import Img from "./img/01.png";
-import { FaMapMarkerAlt, FaRegBookmark } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import "./JobList.css";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import ListElement from "./ListElement";
+import Pagination from "./Pagination";
 
 export default function JobList() {
+  const [loaded, setLoaded] = useState(false);
+  const [list, setList] = useState([]);
+  const [CurrentPage, setCurrentPage] = useState(1);
+  const [listPages] = useState(5);
+
+  useEffect(() => {
+    const getList = async () => {
+      setLoaded(true);
+      const response = await axios.get(
+        `https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu`
+      );
+      console.log(response.data);
+      setList(response.data);
+      setLoaded(false);
+    };
+    getList();
+  }, []);
+
+  const lastPageIndex = CurrentPage * listPages;
+  const firstPageIndex = lastPageIndex - listPages;
+  const currentPageNumber = list.slice(firstPageIndex, lastPageIndex);
+
+  const paginate = (pageNumbers) => setCurrentPage(pageNumbers);
+  const nextPage = () => setCurrentPage((prev) => prev + 1);
+  const prevPage = () => setCurrentPage((prev) => prev - 1);
+
   return (
     <div className="JobList">
-      <div className="page_container_list">
-        <img src={Img} alt="" />
-        <div className="content_list">
-          <div>
-            <h2>
-              <Link to="/job_page">
-                Arbeitsmediziner/-in / Betriebsmediziner/-in (m/w/d) oder einen
-                Arzt/eine Ärztin (m/w/d) für die Weiterbildung zum Facharzt/ zur
-                Fachärztin für Arbeitsmedizin (m/w/d)
-              </Link>
-            </h2>
-          </div>
-          <h3>
-            Department name • Allgemeines Krankenhaus der Stadt Wien - AKH
-          </h3>
-          <h3>
-            <FaMapMarkerAlt /> Vienna, Austria
-          </h3>
+      {currentPageNumber.map((list_item, index) => (
+        <div key={index}>
+          <ListElement data={list_item} load={loaded} />
         </div>
-        <div className="rating">*******</div>
-        <div className="right_block">
-          <div className="bookmark">
-            <FaRegBookmark />
-          </div>
-          <h3 className="post_time">Posted 2 days ago</h3>
-        </div>
-      </div>
+      ))}
+      <Pagination
+        listPages={listPages}
+        totalList={list.length}
+        paginate={paginate}
+        nextPage={nextPage}
+        prevPage={prevPage}
+      />
     </div>
   );
 }

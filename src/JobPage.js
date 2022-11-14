@@ -1,9 +1,8 @@
 import React from "react";
 import "./JobPage.css";
-import { FaShareAlt, FaRegBookmark, FaAngleLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaShareAlt, FaRegBookmark, FaChevronLeft } from "react-icons/fa";
 
-export default function JobPage() {
+export default function JobPage(props) {
   return (
     <div className="JobPage">
       <div className="page_container">
@@ -23,11 +22,7 @@ export default function JobPage() {
             Apply now
           </a>
           <din className="content_title">
-            <div className="title">
-              Arbeitsmediziner/-in / Betriebsmediziner/-in (m/w/d) oder einen
-              Arzt/eine Ärztin (m/w/d) für die Weiterbildung zum Facharzt/ zur
-              Fachärztin für Arbeitsmedizin (m/w/d)
-            </div>
+            <div className="title">{props.genList.title}</div>
             <div className="salary">
               <div className="salary_number">€ 54 000—60 000</div>
               <div className="info_term">Brutto, per year</div>
@@ -70,10 +65,12 @@ export default function JobPage() {
             <div className="galery">photo</div>
           </div>
 
-          <Link to="/" className="back_link">
-            <FaAngleLeft /> {"  "}RETURN TO JOB BOARD
-          </Link>
+          <a href="/" className="back_link">
+            <FaChevronLeft size={25} />
+            RETURN TO JOB BOARD
+          </a>
         </div>
+        <div className="contacts"></div>
       </div>
     </div>
   );

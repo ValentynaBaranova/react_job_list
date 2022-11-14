@@ -1,18 +1,18 @@
 import React from "react";
 import "@dannymichel/proxima-nova";
 import JobList from "./JobList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import JobPage from "./JobPage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<JobList />} />
           <Route path="/job_page" element={<JobPage />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
