@@ -6,11 +6,14 @@
   max-width: 1400px;
   margin: 29px auto;
   background-color: #fff;
-  border: 1px solid red;
-  display: grid;
-  grid-template-columns: 720px auto;
+  display: flex;
+  flex-wrap: wrap;
   color: #3a4562;
-  padding-bottom: 30px;
+  padding: 22px 0;
+}
+
+.main_page_container {
+  width: 59%;
 }
 
 .header {
@@ -50,6 +53,12 @@
   color: #384564;
 }
 
+.content {
+  padding-bottom: 30px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .content_title {
   display: flex;
   justify-content: space-between;
@@ -63,6 +72,9 @@
   letter-spacing: -0.75px;
 }
 
+.salary {
+  padding-left: 20px;
+}
 .salary_number {
   font-weight: 700;
   font-size: 20px;
@@ -107,12 +119,13 @@
   border-radius: 8px;
   padding: 17px 0 16px 0;
   width: 222px;
-  margin-right: 8px;
+  margin: 2px 8px 2px 0;
   color: #988b49;
 }
 
 .pictures_block {
   margin: 87px 0 89px 0;
+  width: 100%;
 }
 
 .back_link {
@@ -134,4 +147,27 @@
 .back_link:hover {
   color: #fff;
   background: #3a4562;
+}
+
+.galery img {
+  width: 30%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+@media only screen and (max-width: 1190px) {
+  .page_container,
+  .main_page_container {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .contacts {
+    margin: 20px 0 0 5px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .action_links a {
+    display: block;
+  }
 }

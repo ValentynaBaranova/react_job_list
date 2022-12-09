@@ -1,0 +1,40 @@
+.MapInfo {
+  height: 400px;
+  width: 436px;
+  border-radius: 8px;
+  margin-left: 10%;
+}
+
+.MapInfo .leaflet-container {
+  height: 200px;
+  width: 436px;
+}
+.MapInfo .map_info_container {
+  font-family: "Roboto";
+  height: 200px;
+  width: 436px;
+  background-color: #202336;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.5625px;
+  color: #e8ebf3;
+  padding: 31px 62px;
+}
+
+.address {
+  color: #a3cbd6;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 850px) {
+  .MapInfo .leaflet-container,
+  .MapInfo .map_info_container {
+    width: 90%;
+  }
+
+  .MapInfo {
+    margin-left: 5px;
+  }
+}

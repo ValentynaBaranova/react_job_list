@@ -4,7 +4,7 @@ import axios from "axios";
 import ListElement from "./ListElement";
 import Pagination from "./Pagination";
 
-export default function JobList() {
+export default function JobList(props) {
   const [loaded, setLoaded] = useState(false);
   const [list, setList] = useState([]);
   const [CurrentPage, setCurrentPage] = useState(1);
@@ -34,7 +34,12 @@ export default function JobList() {
   return (
     <div className="JobList">
       {currentPageNumber.map((list_item, index) => (
-        <div key={index}>
+        <div
+          key={index}
+          onMouseMove={() => {
+            props.updateData(list_item);
+          }}
+        >
           <ListElement data={list_item} load={loaded} />
         </div>
       ))}
@@ -44,6 +49,7 @@ export default function JobList() {
         paginate={paginate}
         nextPage={nextPage}
         prevPage={prevPage}
+        currentPageNumber={currentPageNumber}
       />
     </div>
   );

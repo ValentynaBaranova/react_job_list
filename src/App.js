@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "@dannymichel/proxima-nova";
 import JobList from "./JobList";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import JobPage from "./JobPage";
 
-function App() {
+function App(props) {
+  const [listForPage, setListForPage] = useState([]);
+  console.log(listForPage);
+
+  const updateData = (value) => {
+    setListForPage(value);
+  };
+
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Routes>
-          <Route path="/" element={<JobList />} />
-          <Route path="/job_page" element={<JobPage />} />
+          <Route exact path="/" element={<JobList updateData={updateData} />}>
+            <Route path="/:id" element={<JobList />} />
+          </Route>
+
+          <Route
+            path="/job_page/"
+            element={<JobPage listForPage={listForPage} />}
+          />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }

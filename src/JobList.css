@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 24px 16px;
   gap: 32px;
   box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08),
@@ -33,7 +34,7 @@
   text-decoration: underline;
 }
 
-.JobList h3 {
+h3 {
   font-weight: 400;
   font-size: 16px;
   color: #878d9d;
@@ -49,11 +50,15 @@
 .left_side {
   display: flex;
   justify-content: flex-start;
+  order: 1;
+  width: 75%;
 }
 
 .right_side {
   display: flex;
   align-items: center;
+  order: 2;
+  width: 20%;
 }
 
 .rating {
@@ -61,7 +66,7 @@
 }
 
 .JobList .content_list {
-  width: 800px;
+  width: 95%;
   padding-left: 26px;
 }
 
@@ -75,4 +80,25 @@
 .JobList .bookmark {
   color: #70778b;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 850px) {
+  .JobList .left_side {
+    width: 100%;
+    order: 2;
+  }
+
+  .JobList .right_side {
+    order: 1;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .JobList .right_block {
+    display: flex;
+  }
+
+  .bookmark {
+    display: none;
+  }
 }

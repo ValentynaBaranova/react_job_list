@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Pagination.css";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Pagination(props) {
   const pageNumbers = [];
+  const [pag_page, setPag_page] = useState(0);
+  const navigate = useNavigate();
 
   for (let i = 1; i <= Math.ceil(props.totalList / props.listPages); i++) {
     pageNumbers.push(i);
@@ -13,15 +16,33 @@ export default function Pagination(props) {
         {"<"}
       </button>
       <ul>
+        <li>
+          <Link to="/" className="prevBtn" onClick={() => props.prevPage()}>
+            {"<"}
+          </Link>
+        </li>
+
         {pageNumbers.map((number) => (
           <li key={number}>
-            <a href="/" onClick={() => props.paginate(number)}>
+            <Link
+              to={`${number}`}
+              onClick={() => {
+                props.paginate(number);
+                setPag_page(number);
+              }}
+            >
               {number}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
-      <button className="nextBtn" onClick={() => props.nextPage()}>
+      <button
+        className="nextBtn"
+        onClick={() => {
+          props.nextPage();
+          navigate(+1);
+        }}
+      >
         {">"}
       </button>
     </div>
